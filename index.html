@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-    <link rel="stylesheet" href="./style.css">
-    <title>Frontend Mentor | Workit landing page</title>
+    <script>
+        function loadCSS() {
+            var cssId = 'myCss';
+            if (!document.getElementById(cssId)) {
+                var head  = document.getElementsByTagName('head')[0];
+                var link  = document.createElement('link');
+                link.id   = cssId;
+                link.rel  = 'stylesheet';
+                link.type = 'text/css';
+                link.href = (window.navigator.userAgent.indexOf("Chrome") != -1) ? './styleChrome.css' : './style.css';
+                link.media = 'all';
+                head.appendChild(link);
+            }
+        }
+        window.onload = loadCSS;
+        </script>    <title>Frontend Mentor | Workit landing page</title>
 </head>
 <body>  
     <header>
